@@ -378,4 +378,17 @@ function ChaserEnemy:paceMovement()
     end
 end
 
+function ChaserEnemy:getBackFace()
+	local player = Game.world.player
+	if player.facing == "right" then
+		return "left"
+	elseif player.facing == "left" then
+		return "right"
+	elseif player.facing == "up" then
+		return "down"
+	elseif player.facing == "down" then
+		return "up"
+	end
+end
+
 return ChaserEnemy
